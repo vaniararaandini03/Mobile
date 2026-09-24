@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.vania_3tie.MainActivity
 import com.example.vania_3tie.R
 import com.example.vania_3tie.databinding.ActivityFourthBinding
+import android.util.Log
 import com.example.vania_3tie.databinding.ActivityMainBinding
 
 class FourthActivity : AppCompatActivity() {
@@ -24,6 +25,12 @@ class FourthActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val name = intent.getStringExtra("name")
+        val from = intent.getStringExtra("from")
+        val age = intent.getIntExtra("age",0)
+        Log.e("Data Intent","Nama: $name , Usia: $age, Asal: $from")
+
         binding.btnKembali.setOnClickListener {
             val i = Intent(this@FourthActivity, MainActivity::class.java)
             startActivity(i)
