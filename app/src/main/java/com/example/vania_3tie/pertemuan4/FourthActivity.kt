@@ -11,6 +11,8 @@ import com.example.vania_3tie.MainActivity
 import com.example.vania_3tie.R
 import com.example.vania_3tie.databinding.ActivityFourthBinding
 import android.util.Log
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.example.vania_3tie.databinding.ActivityMainBinding
 
 class FourthActivity : AppCompatActivity() {
@@ -35,6 +37,29 @@ class FourthActivity : AppCompatActivity() {
             // val i = Intent(this@FourthActivity, MainActivity::class.java)
             // startActivity(i)
             finish()
+        }
+
+        binding.btnShowSnackBar.setOnClickListener {
+            Snackbar.make(binding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
+                .setAction("Tutup"){
+                    Log.e("Info Snackbar","Snackbar ditutup")
+                }
+                .show()
+        }
+
+        binding.btnShowAlertDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Ya!")
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Tidak!")
+                }
+                .show()
         }
     }
 }
