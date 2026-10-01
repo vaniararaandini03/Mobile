@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.vania_3tie.databinding.ActivityMainBinding
 import com.example.vania_3tie.pertemuan4.FourthActivity
+import com.example.vania_3tie.pertemuan5.FifthActivity
 import kotlin.jvm.java
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
 
+            startActivity(intent)
+        }
+
+        binding.btnToFifth.setOnClickListener {
+            val intent = Intent(this@MainActivity, FifthActivity::class.java)
             startActivity(intent)
         }
     }
