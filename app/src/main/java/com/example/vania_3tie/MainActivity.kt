@@ -1,5 +1,6 @@
 package com.example.vania_3tie
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.vania_3tie.databinding.ActivityMainBinding
 import com.example.vania_3tie.pertemuan4.FourthActivity
 import com.example.vania_3tie.pertemuan5.FifthActivity
+import androidx.appcompat.app.AlertDialog
 import kotlin.jvm.java
 
 class MainActivity : AppCompatActivity() {
@@ -34,9 +36,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnToFifth.setOnClickListener {
-            val intent = Intent(this@MainActivity, FifthActivity::class.java)
-            startActivity(intent)
+        binding.btnLogout.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("Konfirmasi Logout")
+                .setMessage("Apakah Anda yakin ingin keluar?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val sharedPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    dialog.dismiss()
+
+                    val intent = Intent(this@MainActivity, AuthActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                .setNegativeButton("Tidak") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
         }
     }
 }
