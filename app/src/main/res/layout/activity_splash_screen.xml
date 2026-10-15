@@ -8,7 +8,6 @@
     android:background="#D1C4E9"
     tools:context=".SplashScreenActivity">
 
-    <!-- Logo Bintang / Aplikasi -->
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="120dp"
@@ -20,7 +19,6 @@
         app:layout_constraintVertical_chainStyle="packed"
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
-    <!-- Nama / Identitas Aplikasi -->
     <TextView
         android:id="@+id/tvAppName"
         android:layout_width="wrap_content"
