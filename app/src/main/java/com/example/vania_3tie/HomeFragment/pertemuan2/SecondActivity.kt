@@ -1,4 +1,4 @@
-package com.example.vania_3tie.pertemuan2
+package com.example.vania_3tie.HomeFragment.pertemuan2
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

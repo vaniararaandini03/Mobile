@@ -1,19 +1,15 @@
-package com.example.vania_3tie.pertemuan4
+package com.example.vania_3tie.HomeFragment.pertemuan4
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.annotation.MainThread
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.vania_3tie.MainActivity
 import com.example.vania_3tie.R
 import com.example.vania_3tie.databinding.ActivityFourthBinding
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.example.vania_3tie.databinding.ActivityMainBinding
 
 class FourthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFourthBinding

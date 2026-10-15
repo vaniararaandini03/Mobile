@@ -1,4 +1,4 @@
-package com.example.vania_3tie.pertemuan5
+package com.example.vania_3tie.HomeFragment.pertemuan5
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.vania_3tie.R
 import com.example.vania_3tie.databinding.ActivityFifthBinding
-import com.example.vania_3tie.databinding.ActivityMainBinding
 
 class FifthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFifthBinding

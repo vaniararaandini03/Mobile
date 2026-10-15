@@ -1,18 +1,14 @@
-package com.example.vania_3tie.pertemuan3
+package com.example.vania_3tie.HomeFragment.pertemuan3
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.vania_3tie.R
-import android.widget.EditText
-import android.R.string.no
 import android.content.Intent
-import android.view.LayoutInflater
 import com.example.vania_3tie.databinding.ActivityThirdBinding
 
 class ThirdActivity : AppCompatActivity() {

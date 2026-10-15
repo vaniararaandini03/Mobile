@@ -21,7 +21,7 @@ class AuthActivity : AppCompatActivity() {
         //Kondisi jika isLogin bernilai true
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            val intent = Intent(this@AuthActivity, MainActivity::class.java)
+            val intent = Intent(this@AuthActivity, BaseActivity::class.java)
             startActivity(intent)
             finish()
             return
@@ -50,7 +50,7 @@ class AuthActivity : AppCompatActivity() {
                 editor.putString("username",username)
                 editor.apply()
 
-                val intent = Intent(this@AuthActivity, MainActivity::class.java)
+                val intent = Intent(this@AuthActivity, BaseActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
