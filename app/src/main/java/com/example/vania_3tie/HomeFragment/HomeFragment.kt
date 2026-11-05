@@ -14,6 +14,7 @@ import com.example.vania_3tie.AuthActivity
 import com.example.vania_3tie.HomeFragment.pertemuan4.FourthActivity
 import com.example.vania_3tie.HomeFragment.pertemuan5.FifthActivity
 import com.example.vania_3tie.HomeFragment.pertemuan7.SevenActivity
+import com.example.vania_3tie.HomeFragment.pertemuan9.NinthActivity
 import com.example.vania_3tie.R
 import com.example.vania_3tie.databinding.FragmentHomeBinding
 
@@ -51,8 +52,13 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        binding.btnSeven.setOnClickListener {
+        binding.btnToSeven.setOnClickListener {
             val intent = Intent(requireContext(), SevenActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToNinth.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
 
