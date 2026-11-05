@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vania_3tie.R
@@ -65,19 +66,36 @@ class MoreFragment : Fragment() {
             title = "More"
         }
 
-        val adapter = ArrayAdapter(
+//        val adapter = ArrayAdapter(
+//            requireContext(),
+//            android.R.layout.simple_list_item_1,
+//            dataList
+//        )
+
+        //Ubah adapter menjadi seperti berikut
+        val adapter = SimpleAdapter(
             requireContext(),
-            android.R.layout.simple_list_item_1,
-            dataList
+            dataListWithDesc,
+            android.R.layout.simple_list_item_2,
+            arrayOf("title", "desc"),
+            intArrayOf(android.R.id.text1, android.R.id.text2)
         )
 
         // Hubungkan listViewItems dengan adapter
         binding.listViewItems.adapter = adapter
 
         // Tambahkan aksi saat item di-list diklik
+//        binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
+//            val selectedItem = dataList[position]
+//            Toast.makeText(requireContext(), "Kamu memilih: $selectedItem", Toast.LENGTH_SHORT).show()
+//        }
+
+        // Tambahkan aksi saat item di-list diklik
         binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = dataList[position]
-            Toast.makeText(requireContext(), "Kamu memilih: $selectedItem", Toast.LENGTH_SHORT).show()
+            val selectedItem = dataListWithDesc[position]
+            val title = selectedItem["title"]
+            val desc = selectedItem["desc"]
+            Toast.makeText(requireContext(), "Kamu memilih: $title ($desc)", Toast.LENGTH_SHORT).show()
         }
     }
 }
