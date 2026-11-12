@@ -1,0 +1,7 @@
+package com.example.vania_3tie.HomeFragment.pertemuan11
+
+data class ProductModel(
+    val name: String,
+    val price: String,
+    val imageUrl: String
+)
