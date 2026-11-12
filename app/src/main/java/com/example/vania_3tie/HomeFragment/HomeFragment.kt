@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vania_3tie.AuthActivity
+import com.example.vania_3tie.HomeFragment.pertemuan11.EleventhActivity
 import com.example.vania_3tie.HomeFragment.pertemuan4.FourthActivity
 import com.example.vania_3tie.HomeFragment.pertemuan5.FifthActivity
 import com.example.vania_3tie.HomeFragment.pertemuan7.SevenActivity
@@ -59,6 +60,11 @@ class HomeFragment : Fragment() {
 
         binding.btnToNinth.setOnClickListener {
             val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToEleventh.setOnClickListener {
+            val intent = Intent(requireContext(), EleventhActivity::class.java)
             startActivity(intent)
         }
 
