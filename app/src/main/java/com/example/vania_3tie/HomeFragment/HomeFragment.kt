@@ -10,7 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.vania_3tie.AuthActivity
+import com.example.vania_3tie.HomeFragment.data.api.CatFactApiClient
 import com.example.vania_3tie.HomeFragment.pertemuan11.EleventhActivity
 import com.example.vania_3tie.HomeFragment.pertemuan4.FourthActivity
 import com.example.vania_3tie.HomeFragment.pertemuan5.FifthActivity
@@ -18,6 +20,7 @@ import com.example.vania_3tie.HomeFragment.pertemuan7.SevenActivity
 import com.example.vania_3tie.HomeFragment.pertemuan9.NinthActivity
 import com.example.vania_3tie.R
 import com.example.vania_3tie.databinding.FragmentHomeBinding
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -88,6 +91,23 @@ class HomeFragment : Fragment() {
                     dialog.dismiss()
                 }
                 .show()
+        }
+
+        binding.btnRefresh.setOnClickListener {
+            loadCatFact()
+        }
+
+        loadCatFact()
+    }
+
+    private fun loadCatFact() {
+        lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = "\"${response.fact}\""
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
         }
     }
 }
